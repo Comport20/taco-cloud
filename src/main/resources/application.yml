@@ -1,0 +1,25 @@
+spring:
+  kafka:
+    bootstrap-servers:
+      localhost:9092
+    template:
+      default-topic: tacocloud.orders.topic
+  datasource:
+    name: tacocloud
+    generate-unique-name: false
+  data:
+    rest:
+      base-path: /data-api
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9000/oauth2/jwks
+  main:
+    web-application-type: none
+taco:
+  orders:
+    page-size: 10
+tacocloud:
+  api:
+    url: http://localhost:8080/orders/formEmail
